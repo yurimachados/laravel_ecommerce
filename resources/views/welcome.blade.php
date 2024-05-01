@@ -2,7 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- ... -->
-    @vite(['resources/js/app.ts', 'resources/css/app.css'])
+    @vite('resources/js/app.ts', 'build')
+    @vite('resources/sass/app.scss', 'build')
 </head>
 <body>
     <div id="app">
