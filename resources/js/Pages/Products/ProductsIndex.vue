@@ -35,34 +35,38 @@ export default {
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Products</h2>
         </template>
-        <DataTable
-            :headers="[
-                { text: 'Name', value: 'name' },
-                { text: 'Price', value: 'price' },
-                { text: 'Description', value: 'description'},
-                { text: 'Actions', value: 'actions' }
-            ]"
-            :items="products"
-            :currentPage.sync="currentPage"
-            :perPage="20"
-        >
-            <template #name="{ item }">
-                <div class="text-sm text-gray-900 name-column">{{ item.name }}</div>
-            </template>
-            <template #price="{ item }">
-                <div class="text-sm text-gray-900">${{ item.price }}</div>
-            </template>
-            <template #description="{ item }">
-                <div class="text-sm text-gray-900 description-column">{{ item.description }}</div>
-            </template>
-            <template #actions="{ item }">
-                <div class="flex items-center options-column">
-                    <a href="#" class="">
-                        <FontAwesomeIcon :icon="['fas', 'ellipsis']" class="options-icon" />
-                    </a>
-                </div>
-            </template>
-        </DataTable>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                <DataTable
+                    :headers="[
+                        { text: 'Name', value: 'name' },
+                        { text: 'Price', value: 'price' },
+                        { text: 'Description', value: 'description'},
+                        { text: 'Actions', value: 'actions' }
+                    ]"
+                    :items="products"
+                    :currentPage.sync="currentPage"
+                    :perPage="20"
+                >
+                    <template #name="{ item }">
+                        <div class="text-sm text-gray-900 name-column">{{ item.name }}</div>
+                    </template>
+                    <template #price="{ item }">
+                        <div class="text-sm text-gray-900">${{ item.price }}</div>
+                    </template>
+                    <template #description="{ item }">
+                        <div class="text-sm text-gray-900 description-column">{{ item.description }}</div>
+                    </template>
+                    <template #actions="{ item }">
+                        <div class="flex items-center options-column">
+                            <a :href="route('products.show',{id: item.id})" class="">
+                                <FontAwesomeIcon :icon="['fas', 'ellipsis']" class="options-icon" />
+                            </a>
+                        </div>
+                    </template>
+                </DataTable>
+            </div>
+        </div>
     </AuthenticatedLayout>
 </template>
 <style scoped lang="scss">

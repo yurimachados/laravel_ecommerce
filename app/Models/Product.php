@@ -16,6 +16,11 @@ class Product extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function getPriceAttribute($value)
+    {
+        return floatval($value);
+    }
+
     protected static function booted(){
         static::creating(function($product){
             if ($product->price < 0) {

@@ -112,8 +112,6 @@ export default {
             let itemsPerPage = parseInt(this.perPage);
             this.start = (this.currentPage - 1) * itemsPerPage;
             this.end = Math.min(this.start + itemsPerPage, this.items.length);
-            console.log('start: ', this.start, 'end: ', this.end)
-            console.log('Displaying items', this.items.slice(this.start, this.end));
             return this.items.slice(this.start, this.end);
         },
         displayedPages() {
@@ -148,15 +146,7 @@ export default {
 <style lang="scss">
 @import '../../sass/variables.scss';
 
-.datatable-container {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 7%;
-    margin-right: 7%;
-}
+
 .header-text{
     color: $p-color-800;
     font-size: 14px;

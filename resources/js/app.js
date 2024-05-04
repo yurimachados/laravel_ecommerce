@@ -22,6 +22,7 @@ const app = createInertiaApp({
             .use(ZiggyVue);
         appInstance.component('FontAwesomeIcon', FontAwesomeIcon);
         appInstance.mount(el);
+        appInstance.config.globalProperties.$route = route;
     },
     progress: {
         color: '#4B5563',
