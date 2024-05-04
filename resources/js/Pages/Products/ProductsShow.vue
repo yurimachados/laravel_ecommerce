@@ -2,13 +2,15 @@
 <script>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import UpdateProductInformation from '@/Pages/Products/Partials/UpdateProductInformation.vue';
+import DeleteProductForm from '@/Pages/Products/Partials/DeleteProductForm.vue';
 import { Head } from '@inertiajs/vue3';
 
 export default {
     components: {
         AuthenticatedLayout,
         Head,
-        UpdateProductInformation
+        UpdateProductInformation,
+        DeleteProductForm,
     },
     props: {
         product: {
@@ -40,9 +42,10 @@ export default {
                 </div>
 
                 <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <!-- <DeleteProductForm 
+                    <DeleteProductForm 
                         :product="product" 
-                    /> -->
+                        class="max-w-xl"
+                    />
                 </div>
             </div>  
         </div>
