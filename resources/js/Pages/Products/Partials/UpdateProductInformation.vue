@@ -33,7 +33,7 @@ const form = useForm({
                 Update your product's information.
             </p>
             <form @submit.prevent="form.patch(route('products.update', {id: product.id}))" class="mt-6 space-6">
-                <div>
+                <div class="mt-4">
                     <InputLabel for="name" value="Name" />
 
                     <TextInput
@@ -48,6 +48,7 @@ const form = useForm({
 
                     <InputError class="mt-2" :message="form.errors.name" />
                 </div>
+
                 <div class="mt-4">
                     <InputLabel for="description" value="Description" />
 
